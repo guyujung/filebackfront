@@ -1,0 +1,53 @@
+
+spring:
+  sql:
+    init:
+      platform: mysql
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+  datasource:
+    url: jdbc:mysql://serverdb.cafcib2vatvt.us-east-1.rds.amazonaws.com/co_work?autoReconnect=true&setTimezone=Asia/Seoul # 변경해주세요
+    username: admin # Database ID
+    password: dbsgpp00! # Database Password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  jpa: #???? 2?
+    hibernate: #???? 4?
+      ddl-auto: none #???? 6?
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties: #???? 4?
+      hibernate: #???? 6?
+        # show_sql: true #???? 8?
+        format_sql: true #???? 8?
+
+        globally_quoted_identifiers: true
+
+
+  mvc:
+    hidden-method:
+      filter:
+        enabled: true
+
+  devtools:
+    livereload:
+      enabled: true
+    thymeleaf:
+      cache: false
+    restart:
+      enable: false #????? ??
+
+logging:
+  level: #???? ??
+    org.hibernate.SQL: debug #???? 2?
+
+
+
+
